@@ -19,7 +19,7 @@ public class GameMenu : MainMenu
     }
 
 
-    private void ShowMenu()
+    public void ShowMenu()
     {
         Time.timeScale = 0;
         _target.SetActive(true);
@@ -28,7 +28,7 @@ public class GameMenu : MainMenu
     public void HideMenu()
     {
         Time.timeScale = 1;
-        gameObject.SetActive(false);
+        _target.SetActive(false);
     }
 
     public new void GoToMainMenu()
