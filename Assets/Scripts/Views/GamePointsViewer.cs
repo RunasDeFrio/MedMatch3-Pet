@@ -1,25 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 /// <summary>
 /// Класс для представления кол-во очков набранных игроком.
 /// </summary>
 public class GamePointsViewer : MonoBehaviour
 {
+    [SerializeField]
     private Text text;
 
-    public void ViewGamePoints(int gp)
+    private void ViewGamePoints(int gp)
     {
         text.text = $"Ваш счёт: {gp}";
     }
 
-    // Start is called before the first frame update
-    void Awake()
+    
+    public void Construct(GameState gameState)
     {
-        text = GetComponent<Text>();
-
-        GameManager gm = FindObjectOfType<GameManager>();
-        gm.GamePointsChange += ViewGamePoints;
+        gameState.GamePoints.Subscribe(ViewGamePoints).AddTo(this);
     }
 }

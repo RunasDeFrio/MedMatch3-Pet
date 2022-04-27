@@ -1,18 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
+using UniRx;
+using UnityEngine.UI;
 
 /// <summary>
 /// Класс для представления конца игры.
 /// </summary>
 public class GameOverViewer : MonoBehaviour
 {
-    private GameObject _target;
-    // Use this for initialization
-    void Awake()
+    [SerializeField] private GameObject target;
+    [SerializeField] private Button _restartButton;
+
+    public void Construct(GameState gameState)
     {
-        _target = transform.GetChild(0).gameObject;
-        GameManager gm = FindObjectOfType<GameManager>();
-        if(_target)
-            gm.GameOver += () => _target.SetActive(true);
+        gameState.IsGameActive.Subscribe(value => target.SetActive(!value)).AddTo(this);
+        _restartButton.OnClickAsObservable().Subscribe(_ => gameState.Restart()).AddTo(this);
     }
+
 }

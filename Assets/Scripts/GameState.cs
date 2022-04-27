@@ -1,64 +1,97 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+using DefaultNamespace;
+using JetBrains.Annotations;
+using UniRx;
 using UnityEngine;
-using System.Globalization;
+
 
 /// <summary>
-/// Класс состояния игры для хранения рекордов.
+/// Состояние игры, ходов и очков.
 /// </summary>
-public class GameState : MonoBehaviour
+public class GameState : IDisposable
 {
-    private List<TableInfo> _table;
-    public int NewRecordIndex { get; set; }
-    internal List<TableInfo> Table { get => _table; set => _table = value; }
+    private readonly GameStateData _gameStateData;
+    private readonly MatchGreed _greed;
 
-    void Awake()
+    [Serializable]
+    public struct GameStateData
     {
-        DontDestroyOnLoad(gameObject);
-        ReadCSV();
+        public int startMoves;
+        public int startGamePoint;
     }
 
-    private void ReadCSV()
-    {
-        //читаем csv
-        TextAsset textAsset = Resources.Load<TextAsset>("RecordsTable");
-        var lines = textAsset.text.Split(new[] { "\r\n" }, StringSplitOptions.None);
-        //раскидываем строчки и параметры по полям структуры
-        Table = (from info in (from line in lines
-                               select (line.Split('\t')))
-                 where info.Length > 1
-                 let gp = Int32.Parse(info[1])
-                 let date = DateTime.ParseExact(info[0], "dd.MM.yyyy", CultureInfo.InvariantCulture)
-                 orderby gp
-                 select new TableInfo(date, gp)).ToList();
+    private readonly ReactiveProperty<int> _gamePoints;
 
-    }
+    private readonly ReactiveProperty<bool> _isGameActive;
 
-    public bool CheckNewRecord(int gamePoints)
+    private readonly ReactiveProperty<int> _moves;
+
+    private int removeInFrame = 0;
+
+    private IDisposable frameTimer = null;
+
+    public IReadOnlyReactiveProperty<bool> IsGameActive => _isGameActive;
+
+    public IReadOnlyReactiveProperty<int> GamePoints => _gamePoints;
+
+    public IReadOnlyReactiveProperty<int> Moves => _moves;
+
+
+    public GameState(GameStateData gameStateData, MatchGreed greed)
     {
-        if (Table != null && Table.Count > 0)
+        _gameStateData = gameStateData;
+        _greed = greed;
+        
+        _moves = new ReactiveProperty<int>();
+        _isGameActive = new ReactiveProperty<bool>();
+        _gamePoints = new ReactiveProperty<int>();
+
+
+        greed.Greed.OnElementRemove.Subscribe(eventInfo =>
         {
-            if (gamePoints < Table[0].gamePoint)
+            var (element, vector2Int) = eventInfo;
+            _gamePoints.Value += element.GamePoints;
+
+            if (removeInFrame > 1)
             {
-                NewRecordIndex = -1;
-                return false;
+                _moves.Value++;
             }
-            for (int i = 1; i < Table.Count; i++)
-                if (gamePoints < Table[i].gamePoint)
+            else
+            {
+                _moves.Value--;
+                removeInFrame++;
+                if (removeInFrame > 1)
                 {
-                    NewRecordIndex = i - 1;
-                    Table[NewRecordIndex] = new TableInfo(DateTime.Now, gamePoints);
-                    return true;
+                    _moves.Value += removeInFrame - 1;
                 }
-            NewRecordIndex = Table.Count - 1;
-            Table[NewRecordIndex] = new TableInfo(DateTime.Now, gamePoints);
-            return true;
-        }
-        else
-        {
-            NewRecordIndex = -1;
-            return false;
-        }
+
+                if (frameTimer == null)
+                    frameTimer = Observable.TimerFrame(1).Subscribe(_ =>
+                    {
+                        removeInFrame = 0;
+                        if (_moves.Value == 0)
+                            _isGameActive.Value = false;
+                        frameTimer = null;
+                    });
+            }
+        });
+    }
+
+    public void Dispose()
+    {
+        _gamePoints?.Dispose();
+        _isGameActive?.Dispose();
+        _moves?.Dispose();
+        frameTimer?.Dispose();
+    }
+
+    public void Restart()
+    {
+        _greed.RandomGenerate();
+
+        _moves.Value = _gameStateData.startMoves;
+        _gamePoints.Value = _gameStateData.startGamePoint;
+
+        _isGameActive.Value = true;
     }
 }

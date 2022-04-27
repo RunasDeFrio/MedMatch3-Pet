@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
+  m_Name: AOTGenerationConfig
+  m_EditorClassIdentifier: 
+  automateBeforeBuilds: 1
+  deleteDllAfterBuilds: 1
+  AutomateForAllAOTPlatforms: 1
+  automateForPlatforms: 09000000140000000d000000
+  lastScan: 637700833867359471
+  supportSerializedTypes:
+  - TypeName: UnityEngine.Collider2D, UnityEngine.Physics2DModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.ConnectorSlot, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[RunasDev.MiniGames.TechCreator.IMechanism,
+      Assembly-CSharp],[RunasDev.MiniGames.TechCreator.MechanismEditor, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.GameManagement.DataBase.GameSettingDataBase, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.EventSystem.GroupObserver, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.HashSet`1[[UnityEngine.Collider2D, UnityEngine.Physics2DModule]],
+      System.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.HashSet`1[[System.Type, mscorlib]], System.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.I2DPositioned, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.IColliderCrossingObserver, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.DataBases.Bases.DataBases.IDataBase, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.DataBases.Bases.DataBases.IDataBase[], Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.Containers.IDContainerForIdentifiable`1[[RunasDev.Items.DataBase.ItemData,
+      Assembly-CSharp]], Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.Containers.IDContainerForIdentifiable`1[[RunasDev.MiniGames.TechCreator.MechanismData,
+      Assembly-CSharp]], Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[RunasDev.MiniGames.TechCreator.IMechanism,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ModelFilter.IFilter, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.GameManagement.IGameSettingSetter, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.ProjectChain.IProjectBuildHandler[], Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.Pipes.IReservoir, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Items.DataBase.ItemDataBase, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.WorldModels.IWorldModel, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[RunasDev.Items.DataBase.ItemData,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[RunasDev.MiniGames.TechCreator.MechanismData,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[RunasDev.MiniGames.TechCreator.ConnectorSlot,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[RunasDev.Core.GameManagement.IGameSettingSetter,
+      Core]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.MechanismData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.DataBase.MechanismDataBase, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.MechanismEditor, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.ObjectEqualityComparer`1[[RunasDev.MiniGames.TechCreator.IMechanism,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.Reservoir, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.GameManagement.CommonGameSettingSetters.SetCameraGroup,
+      Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Type, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ModelFilter.TypeFilter, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.GameManagement.CommonGameSettingSetters.WorldModelTagSelect,
+      Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[RunasDev.Core.SaveSystem.SaveProviders.ISaveContainer,
+      Core]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.SaveSystem.FileSaver, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ModelFilter.FilterMode, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Single, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.GameObject, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.StateMachine.IGraphMachine, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.PackageLoaders.ILoadPackage, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.MiniGames.TechCreator.IMechanism, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.ProjectChain.IProjectBuildHandler, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.SaveSystem.SaveProviders.ISaveContainer, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Items.DataBase.ItemData, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[RunasDev.Core.ProjectBuild.PackageLoaders.ILoadPackage,
+      Core]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Object, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.PackageLoader, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.ProjectObjectsInitializer, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.ProjectSaver, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.ProjectWorkerStart, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RunasDev.Core.ProjectBuild.PackageLoaders.SceneLoadPackage, Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1

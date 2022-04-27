@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ea298cab07f3de64da2535c3454495c9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 7e646550d5e46264798b4e3e53a91f05, type: 3}
+  - {fileID: -8619425565731968536, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 5727511915103426232, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: -2310041733561830011, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 7048868636445268144, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 1478789652390268973, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: -5784161692540719584, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 2163721927852739803, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 2132783099266739244, guid: d77ccc42901fe344aa735427dc92b19d, type: 3}
+  - {fileID: 21300000, guid: 8fbba1534bfec3f42b492b3b53930b69, type: 3}
+  - {fileID: 21300000, guid: ba2ac9a340c40194eb55bcd000a1cce9, type: 3}
+  - {fileID: 3970015981214305365, guid: f27d10781e60a9b44a4b1658025a9edf, type: 3}
+  - {fileID: -7443756053782179069, guid: f27d10781e60a9b44a4b1658025a9edf, type: 3}
+  - {fileID: -3192133289119773823, guid: f27d10781e60a9b44a4b1658025a9edf, type: 3}
+  - {fileID: 21300000, guid: 81f1bd8cbd23a6944b8617415266f28d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - background1
+  - virus_sprites_4
+  - virus_sprites_5
+  - virus_sprites_6
+  - virus_sprites_7
+  - virus_sprites_0
+  - virus_sprites_1
+  - virus_sprites_2
+  - virus_sprites_3
+  - virus_blur
+  - virus_blur2
+  - background_2
+  - background_0
+  - background_1
+  - virus
+  m_RenderDataMap: {}
+  m_Tag: UIAtlas
+  m_IsVariant: 0
